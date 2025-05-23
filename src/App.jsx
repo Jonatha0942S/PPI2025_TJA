@@ -1,17 +1,31 @@
 import "./styles/theme.css";
 import "./styles/global.css";
+import { MyText } from "./components/MyText";
 
 function App() {
+  const texts = [
+    {
+      title: "Meu título",
+      text: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    },
+    {
+      title: "Meu título 2",
+      text: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    },
+    {
+      title: "Meu título 3",
+      text: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    },
+  ];
+
   return (
-    <div>
-      <h1> Meu primeiro React App</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt
-        corrupti, fugit, libero atque ad nam earum quo fuga voluptate natus
-        molestias enim totam ipsam! Nulla culpa corporis molestiae itaque nobis.
-      </p>
-    </div>
+    <>
+      {texts.map((text, index) => (
+        <MyText key={index} title={`${index + 1}. ${text.title}`}>
+          {text.text}
+        </MyText>
+      ))}
+    </>
   );
 }
-
 export default App;
